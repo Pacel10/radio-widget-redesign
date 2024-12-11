@@ -65,7 +65,7 @@ button:hover {
     background: #45a049;
 }
 
-/* On-Demand Content Styling */
+/* On-Demand Content Styling Without Images */
 .cc_ondemand_content {
     display: flex;
     flex-wrap: wrap; /* Wrap items onto the next line */
@@ -76,10 +76,10 @@ button:hover {
 .cc_ondemand_content div {
     display: flex; /* Flex layout for alignment */
     flex-direction: column; /* Stack content vertically */
-    align-items: center; /* Center-align content horizontally */
-    justify-content: space-between; /* Distribute content evenly */
+    align-items: flex-start; /* Align text to the left */
+    justify-content: center; /* Center content vertically */
     flex: 1 1 calc(25% - 10px); /* Maintain 4 items per row */
-    text-align: center;
+    text-align: left;
     padding: 15px; /* Add padding for better spacing */
     background: #5e0091; /* Background color */
     color: white; /* Text color */
@@ -89,16 +89,13 @@ button:hover {
 }
 
 .cc_ondemand_content div img {
-    height: 60px; /* Adjust size for visibility */
-    width: 60px;
-    margin-bottom: 10px; /* Space between icon and text */
-    object-fit: contain; /* Ensure proper scaling */
+    display: none; /* Hide the image thumbnails */
 }
 
 .cc_ondemand_content div span {
     font-size: 16px;
     font-weight: bold;
-    text-align: center;
+    text-align: left;
     margin-bottom: 5px;
     overflow: hidden; /* Handle overflow */
     white-space: nowrap; /* Prevent wrapping */
@@ -145,11 +142,6 @@ button:hover {
 
     .cc_ondemand_content div {
         flex: 1 1 calc(50% - 10px); /* Two items per row */
-    }
-
-    .cc_ondemand_content div img {
-        height: 50px; /* Scale down icons */
-        width: 50px;
     }
 
     .cc_ondemand_content div span {
