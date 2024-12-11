@@ -3,60 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Song Request</title>
+    <title>AutoDJ Song Selector</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Song Request App</h1>
+        <h1>AutoDJ Song Selector</h1>
     </header>
 
-    <!-- Request Form Section -->
     <section>
-        <h2>Request a Song</h2>
-        <form class="cc_request_form">
-            <input
-                type="text"
-                name="request[artist]"
-                placeholder="Enter artist or song title"
-                required
-            />
-            <button type="submit">Request Song</button>
-        </form>
-        <div data-type="result"></div>
-    </section>
-
-    <!-- On-Demand Content Section -->
-    <section>
-        <h2>On-Demand Content</h2>
+        <h2>Search and Request Songs</h2>
+        <!-- Search Input -->
         <input
             type="text"
             id="searchInput"
-            placeholder="Search songs by title..."
+            placeholder="Type part of song name or artist..."
         />
+        <!-- On-Demand Content: Real Songs Dynamically Populated -->
         <div class="cc_ondemand_content" id="songList">
-            <div>
-                <span>Never Gonna Give You Up</span>
-            </div>
-            <div>
-                <span>Sweet Child O' Mine</span>
-            </div>
-            <div>
-                <span>Bohemian Rhapsody</span>
-            </div>
-            <div>
-                <span>Smells Like Teen Spirit</span>
-            </div>
-            <div>
-                <span>Rolling in the Deep</span>
-            </div>
-            <div>
-                <span>Stairway to Heaven</span>
-            </div>
+            <!-- Songs will be populated dynamically -->
         </div>
+        <!-- Request Selected Song -->
+        <button id="playSelected" disabled>Request Selected</button>
     </section>
 
     <script src="script.js"></script>
 </body>
 </html>
-
