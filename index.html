@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Radio Widgets</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Radio Widgets</h1>
+  </header>
+
+  <!-- On-Demand Content -->
+  <section id="on-demand-content">
+    <h2>On-Demand Content</h2>
+    <div class="cc_ondemand_content" data-username="petvoj" data-charset="CP1250" data-mount="/petvoj">Loading...</div>
+  </section>
+
+  <!-- Song Request -->
+  <section id="song-request">
+    <h2>Request a Song</h2>
+    <form class="cc_request_form" data-username="petvoj" data-charset="CP1250" data-mount="/petvoj">
+      <input type="text" name="request[title]" placeholder="Enter song name..." />
+      <button type="button" data-type="submit">Request Song</button>
+    </form>
+  </section>
+
+  <!-- Stream Info -->
+  <section id="stream-info">
+    <h2>Now Playing</h2>
+    <span class="cc_streaminfo" data-type="song" data-username="petvoj" data-charset="CP1250" data-mount="/petvoj">Loading...</span>
+  </section>
+
+  <!-- Recent Tracks -->
+  <section id="recent-tracks">
+    <h2>Recent Tracks</h2>
+    <div class="cc_recenttracks_list" data-username="petvoj" data-charset="CP1250" data-mount="/petvoj">Loading...</div>
+  </section>
+
+  <!-- Include Scripts -->
+  <script src="https://control.internet-radio.com:2199/system/ondemand.js"></script>
+  <script src="https://control.internet-radio.com:2199/system/request.js"></script>
+  <script src="https://control.internet-radio.com:2199/system/streaminfo.js"></script>
+  <script src="https://control.internet-radio.com:2199/system/recenttracks.js"></script>
+</body>
+</html>
