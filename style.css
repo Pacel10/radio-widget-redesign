@@ -65,70 +65,45 @@ button:hover {
     background: #45a049;
 }
 
-/* On-Demand and Recent Tracks Item Styling */
-.cc_recenttracks_list div,
-.cc_ondemand_content div {
+/* On-Demand Content Styling */
+.cc_ondemand_content {
     display: flex;
-    align-items: center;
-    margin: 10px 0;
-    background: #6a00a8; /* Highlighted purple background */
-    padding: 10px;
-    border-radius: 8px;
-    color: white;
-    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3);
+    flex-wrap: wrap; /* Wrap items onto the next line */
+    gap: 20px; /* Add spacing between items */
+    margin: 10px 0; /* Add vertical margin to the whole content */
 }
 
-/* Album Art in Lists */
-.cc_recenttracks_list div img,
+.cc_ondemand_content div {
+    display: flex; /* Flex layout for alignment */
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center-align content horizontally */
+    justify-content: space-between; /* Distribute content evenly */
+    flex: 1 1 calc(25% - 10px); /* Maintain 4 items per row */
+    text-align: center;
+    padding: 15px; /* Add padding for better spacing */
+    background: #5e0091; /* Background color */
+    color: white; /* Text color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25); /* Subtle shadow */
+    overflow: hidden; /* Prevent overflow issues */
+}
+
 .cc_ondemand_content div img {
-    height: 60px;
+    height: 60px; /* Adjust size for visibility */
     width: 60px;
-    margin-right: 10px;
-    border-radius: 5px;
+    margin-bottom: 10px; /* Space between icon and text */
+    object-fit: contain; /* Ensure proper scaling */
 }
 
-/* Song Titles */
-.cc_recenttracks_list div span,
 .cc_ondemand_content div span {
     font-size: 16px;
     font-weight: bold;
-    margin-right: 10px;
-}
-
-/* Song ID */
-.cc_recenttracks_list div small,
-.cc_ondemand_content div small {
-    font-size: 14px;
-    color: #d1c4e9; /* Subtle text for IDs */
-    margin-left: auto; /* Push to the right */
-}
-
-/* Hide "Buy this album" links */
-.cc_recenttracks_list a {
-    display: none;
-}
-
-/* Improved On-Demand Content Styling */
-.cc_ondemand_content {
-    display: flex;
-    flex-wrap: wrap; /* Make items wrap if necessary */
-    gap: 10px; /* Add spacing between items */
-}
-
-.cc_ondemand_content div {
-    flex: 1 1 calc(25% - 10px); /* Flexible grid layout with 4 items per row */
     text-align: center;
-    padding: 10px;
-    background: #5e0091;
-    color: white;
-    border-radius: 8px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
-}
-
-.cc_ondemand_content div img {
-    height: 40px;
-    width: 40px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    overflow: hidden; /* Handle overflow */
+    white-space: nowrap; /* Prevent wrapping */
+    text-overflow: ellipsis; /* Add "..." for long text */
+    max-width: 100%; /* Ensure text fits within card */
 }
 
 /* Pagination Styling */
@@ -168,13 +143,16 @@ button:hover {
         font-size: 14px;
     }
 
-    .cc_recenttracks_list div img,
+    .cc_ondemand_content div {
+        flex: 1 1 calc(50% - 10px); /* Two items per row */
+    }
+
     .cc_ondemand_content div img {
-        height: 50px;
+        height: 50px; /* Scale down icons */
         width: 50px;
     }
 
-    .cc_ondemand_content div {
-        flex: 1 1 calc(50% - 10px); /* Two items per row on smaller screens */
+    .cc_ondemand_content div span {
+        font-size: 14px; /* Smaller text */
     }
 }
