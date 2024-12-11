@@ -99,23 +99,21 @@
   <script>
     // JavaScript to handle submission and provide better user feedback
     document.querySelector('.cc_request_form').addEventListener('submit', function (e) {
-      e.preventDefault(); // Prevent the default form submission
-
       const resultMessage = document.getElementById('resultMessage');
       resultMessage.style.display = 'none'; // Hide previous messages
 
-      // Simulate the request process
-      const artist = document.getElementById('artist').value || 'Unknown Artist';
       const title = document.getElementById('title').value;
 
       if (!title) {
+        e.preventDefault(); // Prevent the default form submission if no title
         resultMessage.textContent = 'Error: Please provide a song title!';
         resultMessage.className = 'result-message error';
         resultMessage.style.display = 'block';
         return;
       }
 
-      resultMessage.textContent = `Requesting song: "${title}" by ${artist}. Please wait...`;
+      // On successful submission, display feedback (Centova Cast handles the rest)
+      resultMessage.textContent = 'Request submitted successfully! Please wait...';
       resultMessage.className = 'result-message success';
       resultMessage.style.display = 'block';
     });
