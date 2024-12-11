@@ -6,6 +6,7 @@
     <title>AutoDJ Song Selector</title>
     <link rel="stylesheet" href="style.css">
     <script language="javascript" type="text/javascript" src="https://control.internet-radio.com:2199/system/request.js"></script>
+    <script language="javascript" type="text/javascript" src="https://control.internet-radio.com:2199/system/ondemand.js"></script>
 </head>
 <body>
     <header>
@@ -14,18 +15,29 @@
 
     <section>
         <h2>Search and Request Songs</h2>
-        <!-- Search Input -->
-        <input
-            type="text"
-            id="searchInput"
-            placeholder="Type part of song name or artist..."
-        />
-        <!-- On-Demand Content: Real Songs Dynamically Populated -->
-        <div class="cc_ondemand_content" id="songList">
-            <!-- Songs will be populated dynamically -->
+        <!-- Modernized Song Request Form -->
+        <form class="cc_request_form" data-username="petvoj" data-charset="CP1250" data-mount="/petvoj">
+            <div data-type="result" id="resultMessage"></div>
+            <label for="artistInput">Song artist:</label>
+            <input type="text" id="artistInput" name="request[artist]" placeholder="Artist name" maxlength="127">
+            <label for="titleInput">Song title:</label>
+            <input type="text" id="titleInput" name="request[title]" placeholder="Song title" maxlength="127">
+            <label for="dedicationInput">Dedicated to:</label>
+            <input type="text" id="dedicationInput" name="request[dedication]" placeholder="Dedication" maxlength="127">
+            <label for="nameInput">Your name:</label>
+            <input type="text" id="nameInput" name="request[sender]" placeholder="Your name" maxlength="127">
+            <label for="emailInput">Your E-mail:</label>
+            <input type="text" id="emailInput" name="request[email]" placeholder="Your email" maxlength="127">
+            <button type="button" id="submitRequest" data-type="submit">Submit song request</button>
+        </form>
+    </section>
+
+    <section>
+        <h2>On-Demand Content</h2>
+        <!-- Modernized On-Demand Content -->
+        <div class="cc_ondemand_content" data-username="petvoj" data-charset="CP1250" data-mount="/petvoj" id="onDemandContent">
+            Loading on-demand content...
         </div>
-        <!-- Request Selected Song -->
-        <button id="playSelected" disabled>Request Selected</button>
     </section>
 
     <script src="script.js"></script>
