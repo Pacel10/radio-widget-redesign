@@ -3,7 +3,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector('.cc_request_form');
   const resultDiv = document.querySelector('[data-type="result"]');
 
-  form.querySelector('button[data-type="submit"]').addEventListener('click', () => {
+  form.addEventListener('submit', (event) => {
+    // Prevent the default form submission
+    event.preventDefault();
+
+    // Update the result div with a confirmation message
     resultDiv.innerText = "Request sent!"; // Example confirmation message
   });
 });
