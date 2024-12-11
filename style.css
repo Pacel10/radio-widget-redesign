@@ -84,4 +84,67 @@ button:hover {
     height: 60px;
     width: 60px;
     margin-right: 10px;
-   
+    border-radius: 5px;
+}
+
+/* Song Titles */
+.cc_recenttracks_list div span,
+.cc_ondemand_content div span {
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Song ID */
+.cc_recenttracks_list div small,
+.cc_ondemand_content div small {
+    font-size: 14px;
+    color: #d1c4e9; /* Subtle text for IDs */
+    margin-left: auto; /* Push to the right */
+}
+
+/* Hide "Buy this album" links */
+.cc_recenttracks_list a {
+    display: none;
+}
+
+/* Improved On-Demand Content Styling */
+.cc_ondemand_content {
+    display: flex;
+    flex-wrap: wrap; /* Make items wrap if necessary */
+    gap: 10px; /* Add spacing between items */
+}
+
+.cc_ondemand_content div {
+    flex: 1 1 calc(25% - 10px); /* Flexible grid layout with 4 items per row */
+    text-align: center;
+    padding: 10px;
+    background: #5e0091;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+.cc_ondemand_content div img {
+    height: 40px;
+    width: 40px;
+    margin-bottom: 10px;
+}
+
+/* Media Query for Mobile Responsiveness */
+@media (max-width: 600px) {
+    input, button {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .cc_recenttracks_list div img,
+    .cc_ondemand_content div img {
+        height: 50px;
+        width: 50px;
+    }
+
+    .cc_ondemand_content div {
+        flex: 1 1 calc(50% - 10px); /* Two items per row on smaller screens */
+    }
+}
