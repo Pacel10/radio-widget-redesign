@@ -1,48 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Radio Widgets</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Song Request</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Radio Widgets</h1>
-  </header>
+    <header>
+        <h1>Song Request App</h1>
+    </header>
 
-  <!-- On-Demand Content -->
-  <section id="on-demand-content">
-    <h2>On-Demand Content</h2>
-    <div class="cc_ondemand_content" data-username="petvoj" data-charset="CP1250" data-mount="/petvoj">Loading...</div>
-  </section>
+    <!-- Request Form Section -->
+    <section>
+        <h2>Request a Song</h2>
+        <form class="cc_request_form">
+            <input
+                type="text"
+                name="request[artist]"
+                placeholder="Enter artist or song title"
+                required
+            />
+            <button type="submit">Request Song</button>
+        </form>
+        <div data-type="result"></div>
+    </section>
 
-  <!-- Song Request -->
-  <section id="song-request">
-    <h2>Request a Song</h2>
-    <form class="cc_request_form" data-username="petvoj" data-charset="CP1250" data-mount="/petvoj">
-      <input type="text" name="request[title]" placeholder="Enter song name..." required />
-      <button type="submit" data-type="submit">Request Song</button>
-      <div data-type="result"></div>
-    </form>
-  </section>
+    <!-- On-Demand Content Section -->
+    <section>
+        <h2>On-Demand Content</h2>
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search songs by title..."
+        />
+        <div class="cc_ondemand_content" id="songList">
+            <div>
+                <span>Never Gonna Give You Up</span>
+            </div>
+            <div>
+                <span>Sweet Child O' Mine</span>
+            </div>
+            <div>
+                <span>Bohemian Rhapsody</span>
+            </div>
+            <div>
+                <span>Smells Like Teen Spirit</span>
+            </div>
+            <div>
+                <span>Rolling in the Deep</span>
+            </div>
+            <div>
+                <span>Stairway to Heaven</span>
+            </div>
+        </div>
+    </section>
 
-  <!-- Stream Info -->
-  <section id="stream-info">
-    <h2>Now Playing</h2>
-    <span class="cc_streaminfo" data-type="song" data-username="petvoj" data-charset="CP1250" data-mount="/petvoj">Loading...</span>
-  </section>
-
-  <!-- Recent Tracks -->
-  <section id="recent-tracks">
-    <h2>Recent Tracks</h2>
-    <div class="cc_recenttracks_list" data-username="petvoj" data-charset="CP1250" data-mount="/petvoj">Loading...</div>
-  </section>
-
-  <!-- Include Scripts -->
-  <script src="https://control.internet-radio.com:2199/system/ondemand.js"></script>
-  <script src="https://control.internet-radio.com:2199/system/request.js"></script>
-  <script src="https://control.internet-radio.com:2199/system/streaminfo.js"></script>
-  <script src="https://control.internet-radio.com:2199/system/recenttracks.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
+
