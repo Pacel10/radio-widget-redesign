@@ -3,25 +3,24 @@ document.addEventListener("DOMContentLoaded", () => {
   const songListDiv = document.getElementById("songList");
   const playButton = document.getElementById("playSelected");
 
-  // Simulate fetching real songs from your backend/playlist
+  let songs = []; // Real song data fetched from backend
+  let selectedSong = null; // Track the selected song
+
+  // Fetch songs from /petvoj
   const fetchSongs = async () => {
-    // Replace this with your actual API or backend call to fetch songs
-    return [
-      "Petvoj Nervy",
-      "Never Let Me Down",
-      "Lost Frequencies",
-      "Nervy Remix",
-      "Some Other Song",
-    ];
-  };
-
-  let songs = []; // Real song data
-  let selectedSong = null; // Track selected song
-
-  // Fetch and populate songs initially
-  const initSongs = async () => {
-    songs = await fetchSongs();
-    renderSongs(); // Render all songs initially
+    try {
+      const response = await fetch("https://control.internet-radio.com:2199/start/petvoj");
+      if (response.ok) {
+        const data = await response.json();
+        return data.songs || []; // Ensure we get the songs array
+      } else {
+        console.error("Failed to fetch songs from /petvoj");
+        return [];
+      }
+    } catch (error) {
+      console.error("Error fetching songs:", error);
+      return [];
+    }
   };
 
   // Render songs matching the search query
@@ -57,27 +56,32 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Request selected song
+  // Request the selected song
   const requestSong = async (song) => {
-    // Example of sending a request to AutoDJ API
     try {
-      const response = await fetch("https://your-autodj-api.com/request", {
+      const response = await fetch("https://control.internet-radio.com:2199/start/petvoj", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/x-www-form-urlencoded",
         },
-        body: JSON.stringify({ song: song }),
+        body: new URLSearchParams({ request: song }),
       });
 
       if (response.ok) {
         alert(`Song "${song}" has been added to the queue!`);
       } else {
-        alert("Failed to request song. Please try again.");
+        alert("Failed to request the song. Please try again.");
       }
     } catch (error) {
       console.error("Error requesting song:", error);
       alert("An error occurred. Please check your connection.");
     }
+  };
+
+  // Initialize songs on page load
+  const initSongs = async () => {
+    songs = await fetchSongs();
+    renderSongs(); // Render all songs initially
   };
 
   // Search Input Event Listener
@@ -92,6 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Initialize songs on page load
+  // Fetch and display songs on load
   initSongs();
 });
+
