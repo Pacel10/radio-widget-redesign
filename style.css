@@ -1,27 +1,38 @@
+/* Base Body Styling */
 body {
-    font-family: Arial, sans-serif;
-    background: #2a005f;
-    color: white;
+    font-family: 'Roboto', Arial, sans-serif;
+    background: #2a005f; /* Background color */
+    color: white; /* Text color */
     margin: 0;
     padding: 0;
 }
 
+/* Header Styling */
 header {
     text-align: center;
     padding: 20px;
-    background: #400080;
+    background: #400080; /* Darker purple for header */
 }
 
+/* Section Styling */
 section {
     padding: 20px;
     margin: 20px auto;
     width: 90%;
     max-width: 600px;
-    background: #4b0082;
+    background: #4b0082; /* Rich purple for sections */
     border-radius: 8px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
 }
 
+/* Section Titles */
+section h2 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    text-align: left; /* Align section titles to the left */
+}
+
+/* Input and Button Styling */
 input, button {
     width: 100%;
     padding: 10px;
@@ -31,19 +42,46 @@ input, button {
     border: none;
 }
 
+input {
+    background: white;
+    color: black;
+    border: 1px solid #ccc;
+}
+
+input:focus {
+    outline: 2px solid #4CAF50;
+    background: #3a0050;
+    color: white;
+}
+
 button {
     background: #4CAF50;
     color: white;
     cursor: pointer;
+    transition: background 0.3s ease; /* Smooth transition for hover effect */
 }
 
 button:hover {
     background: #45a049;
 }
 
+/* On-Demand and Recent Tracks Item Styling */
 .cc_recenttracks_list div,
 .cc_ondemand_content div {
     display: flex;
     align-items: center;
     margin: 10px 0;
+    background: #6a00a8; /* Highlighted purple background */
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3);
 }
+
+/* Album Art in Lists */
+.cc_recenttracks_list div img,
+.cc_ondemand_content div img {
+    height: 60px;
+    width: 60px;
+    margin-right: 10px;
+   
