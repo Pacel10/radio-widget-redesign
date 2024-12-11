@@ -27,90 +27,62 @@ section {
 
 /* Section Titles */
 section h2 {
+    font-size: 22px;
     margin-bottom: 10px;
-    font-size: 20px;
-    text-align: left;
 }
 
-/* Input and Button Styling */
-input, button {
+/* Form Input Styling */
+form label {
+    font-size: 16px;
+    display: block;
+    margin-top: 10px;
+}
+
+form input, form button {
     width: 100%;
     padding: 10px;
     margin: 5px 0;
     font-size: 16px;
     border-radius: 5px;
-    border: none;
-}
-
-input {
-    background: white;
-    color: black;
     border: 1px solid #ccc;
 }
 
-input:focus {
+form input:focus {
     outline: 2px solid #4CAF50;
-    background: #3a0050;
-    color: white;
 }
 
-button {
+form button {
     background: #4CAF50;
     color: white;
+    border: none;
     cursor: pointer;
-    transition: background 0.3s ease;
 }
 
-button:hover {
+form button:hover {
     background: #45a049;
-}
-
-/* Search Input Field */
-#searchInput {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background: white;
-    color: black;
-}
-
-#searchInput:focus {
-    outline: 2px solid #4CAF50;
-    background: #3a0050;
-    color: white;
 }
 
 /* On-Demand Content */
 .cc_ondemand_content {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin: 10px 0;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+    padding: 10px;
+    background: #5e0091;
+    border-radius: 8px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.25);
 }
 
 .cc_ondemand_content div {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    flex: 1 1 calc(25% - 10px);
-    text-align: left;
-    padding: 15px;
-    background: #5e0091;
+    background: #4CAF50;
     color: white;
-    border-radius: 8px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
-    overflow: hidden;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
 }
 
-.cc_ondemand_content div span {
-    font-size: 16px;
-    font-weight: bold;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    max-width: 100%;
+.cc_ondemand_content div:hover {
+    background: #45a049;
 }
